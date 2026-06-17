@@ -1,319 +1,239 @@
+# Cross-Lingual Corpus & Fallback Research — v2
 
-# Cross-Lingual Corpus & Fallback Research
+**Owner:** Mira  
+**Component:** AI categorization, summarization, routing, and NLP preparation  
+**Repository target:** `GrievanceID/ai-categorization`  
 
-**Project:** SURP'26 — Voice-Based Citizen Grievance Platform  
-**Repository:** `GrievanceID/ai-categorization`  
-**Prepared by:** Amira / Mira  
-**Week:** 3  
 
----
-
-## 1. Objective
-
-This document audits open-source Moroccan Darija / Arabic / French data sources that could support the AI categorization and routing layer of a voice-based citizen grievance platform.
-
-My specific goal is to answer:
-
-1. What open-source Moroccan Darija data already exists?
-2. Does any of it contain legal, government, administrative, or grievance-related content?
-3. Can French legal/government corpora help with code-switched Darija/French grievances?
-4. What dataset and mapping system should our custom pipeline build next?
+```text
+/datasets_and_mapping.md
+/data/lexicon/government_legal_lexicon_expanded_v2.csv
+```
 
 ---
 
-## 2. Executive Summary
+## 1. Purpose of this document
 
-Open-source Moroccan Darija resources exist, but most are general-purpose: social media, Wikipedia, translation pairs, banking intent detection, or generic speech samples. I did **not** find a dedicated open-source Moroccan Darija legal/government grievance corpus that directly matches our use case.
+This document updates the Week 3 NLP-preparation work for the voice-based citizen grievance platform. The goal is to build a stronger cross-lingual foundation for Moroccan government, legal, and courtroom audio where speakers mix:
 
-The main research gap for our project is therefore not only “Darija speech-to-text.” The gap is **Darija/French/Arabic government-context understanding**: extracting administrative meaning, categorizing complaints, and routing them to the correct public institution.
+- Moroccan Darija
+- Modern Standard Arabic / formal Moroccan court Arabic
+- French administrative and legal terms
+- Moroccan names, honorifics, and local institutional vocabulary
 
-For this reason, our custom dataset should focus on:
-
-- Moroccan government/legal vocabulary
-- Proper names and honorifics such as `السي`, `سيدي`, `الأستاذ`, `السيدة`
-- French administrative terms used in Moroccan speech
-- Darija number expressions
-- Complaint categories aligned with Moroccan public services
-- Routing labels linked to institutions or departments
+The project needs this because ASR models can produce a transcript, but the downstream AI layer still needs to understand the transcript, categorize the grievance, and route it to the correct institution.
 
 ---
 
-## 3. Dataset Audit: Moroccan Darija Sources
+## 2. Why the legal/government lexicon is necessary
 
-| Source | Type | Useful for our project? | Limitation for our use case |
-|---|---|---|---|
-| `atlasia/Atlaset` | Large Moroccan Darija text corpus | Useful for pretraining/background Darija language understanding | Not specifically legal/government grievance data |
-| `atlasia/DODa-audio-dataset` | Darija speech + text samples | Useful for Darija ASR and transcript normalization | General Darija, not government-domain specific |
-| `atlasia/Moroccan-Darija-Wiki-Audio-Dataset` | Darija Wikipedia audio/text | Useful for clean Darija speech and text pairs | Encyclopedic style, not complaint/legal style |
-| DODa / Darija Open Dataset | Darija-English lexical/translation resource | Useful for Darija spelling variants and lexicon building | Mostly general vocabulary, not routing labels |
-| DarijaBERT | Moroccan Darija BERT model | Useful for classification experiments | Needs task-specific labeled grievance data |
-| Atlas-Chat | Darija LLM | Useful for summarization and routing reasoning | Needs controlled prompts and human validation |
-| DarijaBanking | Banking intent dataset | Good example of domain-specific Darija intent classification | Domain is banking, not government grievances |
-| DVOICE / Darija voice data | Community voice data | Useful for ASR/speaker research | Not focused on legal/government vocabulary |
-| Mozilla Common Voice Arabic | Arabic speech data | Useful for MSA speech baseline | Arabic dataset is not Moroccan-Darija-specific |
+The SNRT courtroom-style sample showed that Moroccan legal audio contains formulaic court phrases, proper names, legal charges, financial terms, numbers, and French/Darija code-switching. These are exactly the phrases that can cause serious downstream errors if the transcript is wrong.
 
-### Key finding
+Examples of sensitive terms from the sample:
 
-Open-source data can support **general Darija understanding**, but our project still needs a custom domain layer for **legal/government grievance vocabulary and routing labels**.
-
----
-
-## 4. Estimated Coverage of Moroccan Darija Legal/Government Data
-
-Because the audited datasets do not provide a direct “legal/government grievance” percentage label, an exact statistical percentage cannot be claimed honestly without downloading and classifying every row.
-
-However, based on dataset descriptions:
-
-- **Dedicated Moroccan Darija legal/government grievance corpus found:** 0
-- **Dedicated Moroccan Darija public-service routing corpus found:** 0
-- **General Darija text/speech datasets found:** yes
-- **French legal/government parallel corpora found:** yes, but they are mostly EU/French institutional text, not Moroccan Darija
-
-### Practical conclusion
-
-For our research report, we can say:
-
-> The current open-source ecosystem contains general Moroccan Darija speech and text resources, but no clearly dedicated open-source Moroccan Darija legal/government grievance dataset was identified. Therefore, our custom contribution is to build a small domain-specific dataset and mapping layer for Moroccan public-service complaints.
-
----
-
-## 5. French Legal/Government Data from OPUS
-
-OPUS contains large multilingual corpora that can support French legal or administrative terminology. These are useful because Moroccan complaints often contain French code-switching, especially for institutions, documents, legal terms, and public services.
-
-Potential OPUS corpora to inspect:
-
-| OPUS Corpus | Why it matters |
+| Intended legal phrase | Why it matters |
 |---|---|
-| JRC-Acquis | EU legal texts; useful for formal legal terminology |
-| DGT | Translation memory from EU institutions; useful for administrative and legal phrasing |
-| Europarl | Parliamentary debates; useful for formal institutional language |
-| EUbookshop | Public policy/government-like documents |
-| EMEA | Medical/health terminology, useful for health complaints |
-| MultiUN / UNPC | Formal international institutional language |
+| باسم جلالة الملك | Court-opening formula; should not be corrupted |
+| طبقا للقانون | Legal procedure phrase |
+| نعلن عن افتتاح الجلسة | Court session opening |
+| الملف عدد 12/2023 | Case identifier |
+| المتهمون | Identifies accused persons |
+| يؤازرهم الأستاذ | Indicates legal representation |
+| جنحة غسل الأموال | Core charge: money laundering |
+| الأفعال المنصوص عليها | Legal reference phrase |
+| القانون الجنائي | Criminal code reference |
+| شنو كتقول حول المنسوب إليك | Judge’s question to defendant |
+| أنا بريء | Plea/defense response |
+| سوابق / سبق الحكم عليك | Prior conviction context |
+| الاتجار في المخدرات | Drug-trafficking charge/history |
+| الحسابات البنكية / خمسة مليار | Financial evidence and amount |
+| الأصول التجارية / العقارات / الشركات | Asset ownership indicators |
 
-### Limitation
-
-These corpora are not Moroccan Darija. They should not be used as direct training data for Darija classification without adaptation. Their best use is to help build:
-
-- French legal/admin term list
-- French → Arabic/MSA → Darija mapping
-- Code-switching normalization rules
-- Institutional vocabulary for routing categories
-
----
-
-## 6. Proposed Translation & Mapping System
-
-The goal is to handle code-switched grievances where a citizen mixes Darija, Arabic, and French.
-
-### Example problem
-
-A citizen may say:
-
-> “عندي مشكل فـ dossier ديال permis، مشيت للمقاطعة ولكن قالو ليا système طايح.”
-
-The system should understand:
-
-- `dossier` = administrative file
-- `permis` = permit/license
-- `المقاطعة` = local administrative office / district authority
-- `système طايح` = system down / service unavailable
-- likely category = municipal / administrative service
-- possible routing = local commune / district office
+A simple ASR error can become a serious AI-routing error. For example, confusing **خمسة مليار** with **خمسمائة مليار** changes the financial meaning of the case. Confusing **المنسوب إليك** with another phrase weakens legal summarization. Confusing **الأستاذ بشعيب** affects speaker/person extraction.
 
 ---
 
-## 7. Proposed Lexicon Schema
+## 3. Open-source data audit: what exists and what is missing
 
-Create a file called `government_legal_lexicon.csv` or `lexicon.md` with the following fields:
+### Existing useful resources
 
-| Field | Description | Example |
+| Resource | Usefulness | Limitation for our project |
 |---|---|---|
-| `term_original` | The word/phrase as spoken/written | `dossier` |
-| `language` | Darija / MSA / French / mixed | French |
-| `normalized_form` | Clean normalized version | `ملف إداري` |
-| `english_meaning` | Simple English meaning | administrative file |
-| `category_hint` | Suggested complaint category | civil registry / municipal services |
-| `routing_hint` | Suggested institution type | commune / local office |
-| `example_sentence` | Example grievance sentence | `بغيت نعرف فين وصل dossier ديالي` |
-| `priority_hint` | low / medium / high | medium |
-| `notes` | Ambiguity or context note | could also mean school file |
+| DODa / Darija Open Dataset | Darija text and translation coverage; useful for general Darija normalization | Not a legal/government grievance-routing corpus |
+| DODa-audio-dataset | 12,743 parallel Moroccan Darija text/speech samples | General-purpose; limited legal/admin vocabulary |
+| Moroccan-Darija-Wiki-Audio-Dataset | 551 parallel Darija text/speech samples from Darija Wikipedia | Small and not courtroom/government specific |
+| Moroccan-Darija-Wiki-Dataset | 10,044 parallel Darija text samples | Useful for language modeling, but not speech or legal routing |
+| MoulSot-Full | Large Moroccan Darija speech resource; useful for ASR exploration | Still needs domain filtering for court/legal/government terms |
+| Common Voice Arabic | Useful general Arabic speech reference | Standard Arabic does not replace Moroccan Darija for this use case |
+| OPUS / JRC-Acquis / DGT / Europarl-style resources | Useful for French legal/administrative terminology and translation mapping | European legal language differs from Moroccan legal-admin speech |
 
----
+### Research gap
 
-## 8. Initial Lexicon Seeds
+Open-source Darija and Arabic resources exist, but no dedicated Moroccan Darija/French/Arabic **government grievance and courtroom corpus** was identified. The missing layer is not only transcription; it is a domain-specific mapping between:
 
-| Term | Language | Normalized meaning | Category hint | Routing hint |
-|---|---|---|---|---|
-| `السي` | Darija honorific | Mr. / respectful address | general | none |
-| `سيدي` | Darija/MSA honorific | Sir | general | none |
-| `محكمة` | Arabic/Darija | court | justice/legal | court/justice office |
-| `شكاية` | Arabic/Darija | complaint | general grievance | complaint portal |
-| `رخصة` / `permis` | Arabic/French | license/permit | transport/municipal/admin | commune or transport authority |
-| `dossier` | French | administrative file | civil registry/admin | local office |
-| `acte de naissance` | French | birth certificate | civil registry | commune/civil registry office |
-| `carte nationale` | French/Arabic context | national ID card | identity/civil registry | identity administration |
-| `المقاطعة` | Darija/MSA | district/local office | municipal services | local commune/district |
-| `الجماعة` | Arabic/Darija | commune/municipality | municipal services | commune |
-| `الماء` | Darija/MSA | water | utilities | water utility |
-| `الضو` | Darija | electricity | utilities | electricity utility |
-| `الزبالة` | Darija | garbage/waste | municipal services | commune/waste service |
-| `السبيطار` | Darija | hospital | health | health authority/hospital |
-| `المدرسة` | Arabic/Darija | school | education | school/education delegation |
-| `تعويض` | Arabic/Darija | compensation/payment | social protection | social services |
-| `استدعاء` | Arabic/Darija | summons/notice | justice/admin | relevant institution |
-| `مقدم` | Moroccan admin term | local authority officer | local administration | local authority |
-| `قائد` | Moroccan admin term | local authority leader | local administration | caidat/local authority |
-| `بروسي` / `PV` | Darija/French | official report/minutes | legal/admin | police/court/admin |
-
----
-
-## 9. Classification and Routing Categories
-
-Suggested initial taxonomy:
-
-1. Civil registry and identity documents
-2. Municipal services
-3. Health
-4. Education
-5. Transport
-6. Utilities: water, electricity, sanitation
-7. Justice/legal
-8. Social protection
-9. Housing/land
-10. Police/security
-11. Taxes/fees
-12. Other / unclear
-
-Each category should have:
-
-- label name
-- examples
-- institution type
-- keywords
-- confidence threshold
-- human-review rule
-
----
-
-## 10. Proposed NLP Pipeline for Mira’s Component
-
-Input from Lina:
-
-```json
-{
-  "audio_id": "clip_01",
-  "segments": [
-    {"speaker": "Citizen", "start": 0.0, "end": 8.2, "text": "..."},
-    {"speaker": "Agent", "start": 8.3, "end": 11.5, "text": "..."}
-  ]
-}
-```
-
-Mira’s processing steps:
-
-1. **Normalize text**
-   - standardize spelling variants
-   - identify French/Darija/MSA terms
-   - preserve names and numbers carefully
-
-2. **Extract key fields**
-   - issue
-   - location
-   - date/duration
-   - institution mentioned
-   - prior action
-   - urgency
-   - evidence
-
-3. **Categorize complaint**
-   - DarijaBERT/AraBERT for fast classification
-   - Atlas-Chat for reasoning when the case is complex
-
-4. **Route complaint**
-   - map category to institution type
-   - add confidence score
-   - flag unclear cases for human review
-
-5. **Produce structured JSON**
-
-```json
-{
-  "summary": "Citizen reports a delay in receiving an administrative permit from the local office.",
-  "category": "civil_registry_or_municipal_services",
-  "urgency": "medium",
-  "institution_type": "local commune / district office",
-  "evidence": ["mentions dossier", "mentions local office", "mentions system down"],
-  "confidence": 0.74,
-  "human_review_required": true
-}
+```text
+spoken Darija / Arabic / French term
+→ normalized legal-admin term
+→ complaint category
+→ routing institution
+→ confidence / human-review flag
 ```
 
 ---
 
-## 11. Fallback Research Strategy
+## 4. Proposed cross-lingual mapping approach
 
-Because Darija government data is limited, we should use a fallback strategy:
+The AI categorization pipeline should not depend only on one model. It should combine a lexicon, classification model, LLM reasoning, and human review.
 
-### Level 1 — Use existing Darija resources
-Use Atlaset, DODa, DODa-Audio, DarijaBERT, Atlas-Chat, and DarijaBanking to support general Darija understanding.
+### Step 1 — Normalize terminology
 
-### Level 2 — Use French legal/government corpora
-Use OPUS corpora like JRC-Acquis, DGT, Europarl, and EMEA to build French administrative/legal vocabulary.
+Map noisy ASR outputs and code-switched words to a clean normalized form.
 
-### Level 3 — Build our custom mini-dataset
-Use the team’s SNRT/courtroom clips and manual transcripts to create domain-specific examples.
+Example:
 
-### Level 4 — Human-in-the-loop review
-When confidence is low, do not auto-route. Send to human review.
-
----
-
-## 12. Research Gap Statement
-
-Existing Moroccan Darija datasets are useful for general language modeling, ASR, and translation, but they do not directly cover the government grievance workflow. French legal corpora exist, but they do not reflect Moroccan Darija code-switching or Moroccan institutional routing.
-
-Our project fills this gap by creating a pipeline that combines:
-
-- Darija/Arabic/French transcript understanding
-- government/legal lexicon mapping
-- complaint categorization
-- routing to the right institution
-- confidence scoring and human review
-- later integration with the MOSIP/Inji trust layer
-
----
-
-## 13. Next Steps for My Repository
-
-1. Add this file to `GrievanceID/ai-categorization` as:
-
-```bash
-datasets_and_mapping.md
+```text
+غسي الأموال / غسيل الاموال / blanchiment d'argent
+→ غسل الأموال
+→ category: financial_crime
 ```
 
-2. Create a `data/lexicon/` folder.
-3. Start `government_legal_lexicon.csv` using the schema above.
-4. Create 10–20 mock grievance examples with labels.
-5. Define the first routing taxonomy in `data/taxonomy/chikaya_style_taxonomy.md`.
+### Step 2 — Extract administrative facts
+
+From the transcript, extract:
+
+- issue / charge / complaint topic
+- people and roles: متهم، محامي، قاضي، شاهد، مشتكي
+- location / institution
+- document type: محضر، رخصة، شهادة، dossier, PV
+- amount: درهم، سنتيم، مليون، مليار
+- urgency and risk
+
+### Step 3 — Categorize the case
+
+Use a first-pass classifier such as DarijaBERT/AraBERT for fast category prediction:
+
+- court/legal
+- financial crime
+- police/security
+- civil registry
+- municipal services
+- land/property
+- health
+- education
+- utilities
+- social protection
+
+### Step 4 — Use an LLM for summarization and routing reasoning
+
+Use Atlas-Chat / LLM for:
+
+- short case summary
+- routing explanation
+- ambiguity detection
+- human-review recommendation
+
+### Step 5 — Apply human review for sensitive or low-confidence outputs
+
+Automatic routing should be blocked or flagged when:
+
+- financial amounts are uncertain
+- multiple institutions are possible
+- speaker role is unclear
+- legal charge is ambiguous
+- the case contains sensitive identity/voice data
 
 ---
 
-## 14. Sources to Track
+## 5. Recommended lexicon schema
 
-- Hugging Face Moroccan Darija dataset collections
-- Atlaset dataset card
-- DODa / Darija Open Dataset paper
-- DarijaBERT Hugging Face model card
-- Atlas-Chat paper
-- DarijaBanking paper
-- DVOICE / Darija voice dataset
-- Mozilla Common Voice Arabic and Moroccan Darija localization discussions
-- OPUS corpora: JRC-Acquis, DGT, Europarl, EMEA, EUbookshop, MultiUN/UNPC
+The expanded CSV uses this schema:
+
+| Column | Meaning |
+|---|---|
+| `term_original` | Term as it may appear in Arabic, Darija, or French |
+| `language` | Language/style: Arabic/MSA, Darija, French, mixed, proper name |
+| `normalized_form` | Clean canonical form used by NLP pipeline |
+| `english_meaning` | English gloss for team readability |
+| `category_hint` | Category signal for classifier/routing |
+| `routing_hint` | Suggested institution/domain |
+| `priority_hint` | Importance for correction: high/medium/low |
+| `common_asr_errors_or_variants` | Likely ASR mistakes or spelling variants |
+| `notes` | Why the term matters |
+| `example_sentence` | Optional example usage |
 
 ---
 
-## 15. One-Sentence Contribution
+## 6. What the custom dataset must cover
 
-My contribution is to document the lack of a dedicated Moroccan Darija government-grievance corpus and propose a cross-lingual mapping layer that connects Darija, Arabic, and French expressions to complaint categories, routing decisions, and human-review safeguards.
+The team’s custom dataset should intentionally include:
+
+1. **Court-opening and legal-procedure formulas**  
+   Example: باسم جلالة الملك، طبقا للقانون، افتتاح الجلسة
+
+2. **Defendant/charge structures**  
+   Example: المتهم، جنحة، جناية، المنسوب إليك، الأفعال المنصوص عليها
+
+3. **Financial crime vocabulary**  
+   Example: غسل الأموال، حسابات بنكية، تحويلات، أصول تجارية، عقارات، شركات، فواتير
+
+4. **Drug/legal-crime vocabulary**  
+   Example: الاتجار في المخدرات، سوابق قضائية، حبس نافذ
+
+5. **French legal/admin code-switching**  
+   Example: plainte, réclamation, tribunal, audience, avocat, juge, dossier, PV, blanchiment d’argent
+
+6. **Moroccan government-routing vocabulary**  
+   Example: الجماعة، المقاطعة، العمالة، الحالة المدنية، المحافظة العقارية، الدرك، الأمن الوطني
+
+7. **Names and honorifics**  
+   Example: السي فؤاد، الأستاذ بشعيب، أمين، إدريس كبور
+
+8. **Numbers and money expressions**  
+   Example: مليون، مليار، سنتيم، درهم، خمسة مليار
+
+---
+
+## 7. Immediate next steps for Mira’s NLP prep
+
+1. Upload the expanded lexicon CSV to:
+
+```text
+data/lexicon/government_legal_lexicon_expanded_v2.csv
+```
+
+2. Keep collecting WhisperX/MoulSot/Whisper errors in an error-analysis file:
+
+```text
+data/error_analysis/asr_legal_errors.csv
+```
+
+Suggested columns:
+
+```text
+audio_id,start_time,end_time,model_output,correct_text,error_type,priority,notes
+```
+
+3. Add correction candidates to the lexicon whenever repeated errors appear.
+
+4. Build a small evaluation set with 50–100 legal/government utterances and a gold category/routing label.
+
+5. Use the lexicon first for post-processing and later as seed data for classification/routing.
+
+---
+
+## 8. Main finding
+
+General Moroccan Darija resources exist, but the project needs a specialized legal/government lexicon and custom evaluation set. The strongest contribution is a cross-lingual bridge that connects Darija, Arabic, and French legal-government expressions to downstream grievance categorization and routing.
+
+---
+
+## 9. Source links for dataset audit
+
+- DODa-audio-dataset: https://huggingface.co/datasets/atlasia/DODa-audio-dataset
+- Moroccan-Darija-Wiki-Audio-Dataset: https://huggingface.co/datasets/atlasia/Moroccan-Darija-Wiki-Audio-Dataset
+- Moroccan-Darija-Wiki-Dataset: https://huggingface.co/datasets/atlasia/Moroccan-Darija-Wiki-Dataset
+- MoulSot-Full: https://huggingface.co/datasets/atlasia/MoulSot-Full
+- Mozilla Common Voice datasets: https://commonvoice.mozilla.org/en/datasets
+- Moroccan Arabic Common Voice localization discussion: https://discourse.mozilla.org/t/moroccan-arabic-localization-request/82757
+- OPUS corpus: https://opus.nlpl.eu/
+- JRC-Acquis legal corpus paper: https://arxiv.org/abs/cs/0609058
