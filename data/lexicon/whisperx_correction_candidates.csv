@@ -1,0 +1,39 @@
+correct_form,wrong_asr_form,language_context,meaning,category_hint,priority,notes
+ملف,ملاف / ملاوف,Arabic legal/admin,case file,court_admin,high,clear correction from note page 1
+عدد,عدة,Arabic legal/admin,number / file number,court_admin,medium,file number phrase
+كريم,كاريم,Moroccan proper name,Karim,proper_name,medium,proper noun correction
+عيسى,ايسا,Moroccan proper name,Issa,proper_name,medium,proper noun correction
+يؤازرهم,يؤذرهم / يوازنهم,Arabic legal formula,represented/assisted by counsel,court_role,high,court representation phrase
+الأستاذ,الأساد,Arabic/Moroccan legal title,lawyer / counsel title,court_role,high,common court title
+المتهم,المتهمف,Arabic legal role,defendant/accused,court_role,high,role extraction
+فؤاد,واد / فواد,Moroccan proper name,Fouad,proper_name,medium,name recognition
+أنت,أنتم,Arabic/Darija pronoun,you singular,dialogue,low,singular/plural confusion in interrogation
+الأفعال,الأفعل,Arabic legal term,acts/facts constituting offence,charge_formula,high,charge reading
+المنصوص,لمنهوص / المنهوص,Arabic legal term,provided/stipulated by law,charge_formula,high,legal article phrase
+عليها,إليه / اليه,Arabic legal grammar,upon/by it; referring to acts/penalty,charge_formula,medium,phrase: المنصوص عليها
+وإلا,ولا,Arabic legal connector,and/or otherwise / and its penalty,charge_formula,medium,phrase: وإلا عقوبتها
+الفصول,الفوصول,Arabic legal term,legal articles/chapters,law_reference,high,article references
+خمسمائة وأربعة وسبعون على واحد,خمس ميور باوس بين على واحد / خمسميور باوسبين لوحد,Arabic legal article number,Article 574-1,law_reference,high,ASR failed legal article number
+خمسمائة وأربعة وسبعون على جوج,خمس ميور باوس بين لجوج / خمسميور باوسبين لجوج,Arabic/Darija legal article number,Article 574-2,law_reference,high,ASR failed legal article number
+خمسمائة وأربعة وسبعون على ثلاثة,خمس ميور باوس بين لتلاتة / خمسميور باوسبين لتلاتها,Arabic/Darija legal article number,Article 574-3,law_reference,high,ASR failed legal article number
+القانون الجنائي,القانول جيناي / القانون الجينائي,Arabic legal term,criminal code,law_reference,high,core legal reference
+شنو,شنك,Darija,what,dialogue,medium,Darija question word
+كتقول,تقول,Darija/MSA,do you say,dialogue,low,form variation
+المنسوب إليك,المنصوب إليك / المدصوب إليك,Arabic legal formula,attributed to you / accusation against you,charge_formula,high,court question
+بريء,باريئ / باري,Arabic/Darija plea,innocent,plea,high,plea response
+ما درت والو,ترتواه / مدارت والو,Darija plea,I did nothing,plea,medium,from note; ASR may hallucinate
+حبسا نافذا,حب سن نافيدا / حبس نافيداً,Arabic legal sentence,effective prison sentence,sentencing,high,sentence term
+في قضية سابقة,فقد يسابق,Arabic legal phrase,in a previous case,criminal_record,high,prior conviction
+تجارة,تجار في,Arabic/Darija,trade/trafficking context,criminal_offence,medium,drug trafficking phrase
+المخدرات,المخدرت,Arabic/Darija,drugs/narcotics,criminal_offence,high,drug trafficking
+الحسابات,الحسابية,Arabic finance,accounts,financial_evidence,high,financial evidence
+البنكية,البنكة / البنكي,Arabic/French finance,banking,financial_evidence,medium,bank accounts
+خمسة ديال المليار,خمسات المليار / خمسة دلال المليار,Darija amount,five billion,financial_amount,high,critical financial amount
+سنتيم,سنة يم / سنتم,Darija currency,centimes,financial_amount,high,money amount unit
+العمارات,الأمارات,Arabic/Darija asset,buildings/apartment blocks,asset_extraction,high,asset extraction
+العقارات,العقاراتي,Arabic/French asset,real estate,asset_extraction,high,asset extraction
+الشركات,الشركاة,Arabic/Darija business,companies,business_entity,high,company extraction
+الفيلات,فيات,Arabic/French asset,villas,asset_extraction,medium,asset extraction
+منين جات,نجت / ميناجات,Darija question,where did it come from,financial_evidence,medium,source of funds
+وقاع دوك,وقعدوك / وقعودوك,Darija,all those,dialogue,low,Darija phrase; spelling can vary
+أنت متهم,أنتم / أنت مهم,Arabic legal formula,you are accused,charge_formula,high,charge formula
