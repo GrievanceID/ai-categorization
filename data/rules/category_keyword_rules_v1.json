@@ -1,0 +1,231 @@
+{
+  "financial_crime": {
+    "keywords": [
+      "غسل الأموال",
+      "تبييض الأموال",
+      "حسابات بنكية",
+      "تحويلات",
+      "فواتير",
+      "شركات",
+      "عقارات",
+      "أموال",
+      "مليار",
+      "مليون",
+      "blanchiment",
+      "compte bancaire"
+    ],
+    "priority": 1,
+    "sensitive": true,
+    "default_urgency": "high"
+  },
+  "court_legal": {
+    "keywords": [
+      "محكمة",
+      "جلسة",
+      "متهم",
+      "محامي",
+      "قاضي",
+      "حكم",
+      "القانون الجنائي",
+      "المنسوب إليك",
+      "جنحة",
+      "جناية",
+      "tribunal",
+      "avocat"
+    ],
+    "priority": 2,
+    "sensitive": true,
+    "default_urgency": "high"
+  },
+  "police_security": {
+    "keywords": [
+      "الشرطة",
+      "الأمن",
+      "الدرك",
+      "محضر",
+      "سرقة",
+      "اعتداء",
+      "تهديد",
+      "violence",
+      "plainte"
+    ],
+    "priority": 3,
+    "sensitive": true,
+    "default_urgency": "high"
+  },
+  "health": {
+    "keywords": [
+      "مستشفى",
+      "طبيب",
+      "علاج",
+      "حالة مستعجلة",
+      "الصحة",
+      "استعجالي",
+      "hôpital",
+      "urgence"
+    ],
+    "priority": 4,
+    "sensitive": true,
+    "default_urgency": "high"
+  },
+  "land_property": {
+    "keywords": [
+      "عقار",
+      "أرض",
+      "ملكية",
+      "المحافظة العقارية",
+      "رخصة البناء",
+      "terrain",
+      "propriété"
+    ],
+    "priority": 5,
+    "sensitive": true,
+    "default_urgency": "medium"
+  },
+  "civil_registry": {
+    "keywords": [
+      "عقد الازدياد",
+      "الحالة المدنية",
+      "البطاقة الوطنية",
+      "كناش الحالة المدنية",
+      "CIN",
+      "acte de naissance"
+    ],
+    "priority": 6,
+    "sensitive": true,
+    "default_urgency": "medium"
+  },
+  "labor_employment": {
+    "keywords": [
+      "خدمة",
+      "عقد عمل",
+      "أجرة",
+      "مشغل",
+      "ضمان اجتماعي",
+      "CNSS",
+      "salaire",
+      "contrat de travail"
+    ],
+    "priority": 7,
+    "sensitive": true,
+    "default_urgency": "medium"
+  },
+  "education": {
+    "keywords": [
+      "مدرسة",
+      "جامعة",
+      "أستاذ",
+      "تلميذ",
+      "تسجيل",
+      "منحة",
+      "école",
+      "université",
+      "bourse"
+    ],
+    "priority": 8,
+    "sensitive": false,
+    "default_urgency": "medium"
+  },
+  "general_administration": {
+    "keywords": [
+      "ملف",
+      "طلب",
+      "تأخر",
+      "جواب",
+      "إدارة",
+      "وثيقة",
+      "document",
+      "administration",
+      "dossier"
+    ],
+    "priority": 9,
+    "sensitive": false,
+    "default_urgency": "medium"
+  },
+  "municipal_services": {
+    "keywords": [
+      "الجماعة",
+      "المقاطعة",
+      "الزبالة",
+      "النفايات",
+      "الإنارة",
+      "الطريق",
+      "commune",
+      "déchets",
+      "éclairage"
+    ],
+    "priority": 10,
+    "sensitive": false,
+    "default_urgency": "low"
+  },
+  "utilities": {
+    "keywords": [
+      "الماء",
+      "الكهرباء",
+      "الضو",
+      "فاتورة",
+      "انقطاع",
+      "ONEE",
+      "eau",
+      "électricité",
+      "facture"
+    ],
+    "priority": 11,
+    "sensitive": false,
+    "default_urgency": "low"
+  },
+  "transport": {
+    "keywords": [
+      "طاكسي",
+      "حافلة",
+      "طريق",
+      "نقل",
+      "رخصة السياقة",
+      "taxi",
+      "bus",
+      "transport"
+    ],
+    "priority": 12,
+    "sensitive": false,
+    "default_urgency": "low"
+  },
+  "tax_business": {
+    "keywords": [
+      "شركة",
+      "ضريبة",
+      "سجل تجاري",
+      "فاتورة",
+      "رخصة تجارية",
+      "impôt",
+      "registre de commerce"
+    ],
+    "priority": 13,
+    "sensitive": false,
+    "default_urgency": "medium"
+  },
+  "social_protection": {
+    "keywords": [
+      "دعم",
+      "معاش",
+      "تعويض",
+      "مساعدة اجتماعية",
+      "CNSS",
+      "pension",
+      "aide sociale"
+    ],
+    "priority": 14,
+    "sensitive": false,
+    "default_urgency": "medium"
+  },
+  "unclear_needs_review": {
+    "keywords": [
+      "غير واضح",
+      "ما فهمتش",
+      "ناقص",
+      "مبهم"
+    ],
+    "priority": 99,
+    "sensitive": true,
+    "default_urgency": "medium"
+  }
+}
