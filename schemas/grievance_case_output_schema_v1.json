@@ -1,0 +1,103 @@
+{
+  "schema_name": "grievance_case_output_schema_v1",
+  "description": "Structured output schema for the AI categorization and routing layer of the voice-based citizen grievance platform.",
+  "type": "object",
+  "required": [
+    "case_id",
+    "input_transcript",
+    "language_mix",
+    "grievance_category",
+    "institution_category",
+    "primary_institution",
+    "urgency",
+    "summary",
+    "confidence_score",
+    "human_review_flag",
+    "reasoning_short"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "description": "Unique case identifier for the processed grievance."
+    },
+    "input_transcript": {
+      "type": "string",
+      "description": "Corrected or speaker-labeled transcript received from the ASR/diarization pipeline."
+    },
+    "language_mix": {
+      "type": "string",
+      "description": "Main language mix detected in the transcript.",
+      "examples": [
+        "Darija",
+        "Arabic/MSA",
+        "Darija/Arabic",
+        "Darija/Arabic/French",
+        "French"
+      ]
+    },
+    "grievance_category": {
+      "type": "string",
+      "description": "What the complaint is about.",
+      "allowed_values": [
+        "court_legal",
+        "financial_crime",
+        "civil_registry",
+        "municipal_services",
+        "land_property",
+        "police_security",
+        "health",
+        "education",
+        "utilities",
+        "transport",
+        "tax_business",
+        "social_protection",
+        "labor_employment",
+        "general_administration",
+        "unclear_needs_review"
+      ]
+    },
+    "institution_category": {
+      "type": "string",
+      "description": "The public-service or institutional destination category."
+    },
+    "primary_institution": {
+      "type": "string",
+      "description": "Likely institution or public body that should receive the case."
+    },
+    "urgency": {
+      "type": "string",
+      "allowed_values": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "description": "Urgency level of the grievance."
+    },
+    "summary": {
+      "type": "string",
+      "description": "Short factual summary of the grievance. It must not invent information."
+    },
+    "confidence_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Model confidence between 0 and 1."
+    },
+    "human_review_flag": {
+      "type": "boolean",
+      "description": "True if the case should be reviewed by a human before routing."
+    },
+    "reasoning_short": {
+      "type": "string",
+      "description": "Short explanation of why the category and routing were selected."
+    },
+    "category_override": {
+      "type": "string",
+      "description": "Optional employee correction for routing or category after review."
+    },
+    "review_notes": {
+      "type": "string",
+      "description": "Optional notes added by a human reviewer."
+    }
+  }
+}
