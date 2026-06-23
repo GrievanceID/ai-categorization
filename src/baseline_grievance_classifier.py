@@ -1,74 +1,47 @@
-# Baseline Grievance Classifier v1
-# Purpose: simple rule-based categorization and routing for Moroccan Darija/Arabic grievances
+# Baseline Grievance Classifier v2
+# Purpose: rule-based categorization and routing using external JSON keyword rules
+
+import json
+from pathlib import Path
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+RULES_PATH = BASE_DIR / "data" / "rules" / "category_keyword_rules_v1.json"
+
+
+ROUTING_MAP = {
+    "financial_crime": "Justice institution / financial investigation authority",
+    "court_legal": "Justice institution / court clerk",
+    "civil_registry": "Commune civil registry office",
+    "municipal_services": "Commune / municipality",
+    "land_property": "Land registry / conservation foncière",
+    "police_security": "Police / gendarmerie",
+    "health": "Hospital administration / health authority",
+    "education": "School or education authority",
+    "utilities": "Utility provider",
+    "transport": "Transport authority",
+    "tax_business": "Tax authority / commerce administration",
+    "social_protection": "Social protection authority",
+    "labor_employment": "Labor inspectorate / employment authority",
+    "general_administration": "Relevant public administration",
+    "unclear_needs_review": "Human employee review"
+}
+
+
+def load_rules():
+    with open(RULES_PATH, "r", encoding="utf-8") as file:
+        return json.load(file)
+
 
 def classify_grievance(transcript):
+    rules = load_rules()
     text = transcript.lower()
-
-    categories = {
-        "financial_crime": [
-            "غسل الأموال", "تبييض الأموال", "حسابات بنكية", "تحويلات", "فواتير",
-            "شركات", "عقارات", "أموال", "مليار", "مليون"
-        ],
-        "court_legal": [
-            "محكمة", "جلسة", "متهم", "محامي", "الأستاذ", "قاضي",
-            "حكم", "القانون الجنائي", "المنسوب إليك", "جنحة", "جناية"
-        ],
-        "civil_registry": [
-            "عقد الازدياد", "الحالة المدنية", "البطاقة الوطنية", "كناش الحالة المدنية"
-        ],
-        "municipal_services": [
-            "الجماعة", "المقاطعة", "الزبالة", "النفايات", "الإنارة", "الطريق"
-        ],
-        "land_property": [
-            "العقار", "الأرض", "الملكية", "المحافظة العقارية", "رخصة البناء"
-        ],
-        "police_security": [
-            "الشرطة", "الأمن", "الدرك", "محضر", "سرقة", "اعتداء", "تهديد"
-        ],
-        "health": [
-            "مستشفى", "طبيب", "علاج", "حالة مستعجلة", "الصحة"
-        ],
-        "education": [
-            "مدرسة", "جامعة", "أستاذ", "تلميذ", "تسجيل", "منحة"
-        ],
-        "utilities": [
-            "الماء", "الكهرباء", "الضو", "فاتورة", "انقطاع"
-        ],
-        "labor_employment": [
-            "خدمة", "عقد عمل", "أجرة", "مشغل", "ضمان اجتماعي", "CNSS"
-        ],
-        "general_administration": [
-            "ملف", "طلب", "تأخر", "جواب", "إدارة", "وثيقة"
-        ]
-    }
-
-    routing_map = {
-        "financial_crime": "Justice institution / financial investigation authority",
-        "court_legal": "Justice institution / court clerk",
-        "civil_registry": "Commune civil registry office",
-        "municipal_services": "Commune / municipality",
-        "land_property": "Land registry / conservation foncière",
-        "police_security": "Police / gendarmerie",
-        "health": "Hospital administration / health authority",
-        "education": "School or education authority",
-        "utilities": "Utility provider",
-        "labor_employment": "Labor inspectorate / employment authority",
-        "general_administration": "Relevant public administration"
-    }
-
-    sensitive_categories = [
-        "financial_crime",
-        "court_legal",
-        "police_security",
-        "health",
-        "land_property",
-        "civil_registry",
-        "labor_employment"
-    ]
 
     matched_categories = []
 
-    for category, keywords in categories.items():
+    for category, rule_data in rules.items():
+        keywords = rule_data.get("keywords", [])
+
         for keyword in keywords:
             if keyword.lower() in text:
                 matched_categories.append(category)
@@ -76,36 +49,25 @@ def classify_grievance(transcript):
 
     if not matched_categories:
         category = "unclear_needs_review"
-        institution = "Human employee review"
+        institution = ROUTING_MAP[category]
         urgency = "medium"
         human_review = True
         confidence = 0.30
     else:
-        priority_order = [
-            "financial_crime",
-            "court_legal",
-            "police_security",
-            "health",
-            "land_property",
-            "civil_registry",
-            "labor_employment",
-            "general_administration",
-            "municipal_services",
-            "utilities",
-            "education"
-        ]
+        matched_categories = sorted(
+            matched_categories,
+            key=lambda cat: rules[cat].get("priority", 99)
+        )
 
-        category = next((cat for cat in priority_order if cat in matched_categories), matched_categories[0])
-        institution = routing_map.get(category, "Human employee review")
-        human_review = category in sensitive_categories or len(matched_categories) > 1
+        category = matched_categories[0]
+        institution = ROUTING_MAP.get(category, "Human employee review")
+        urgency = rules[category].get("default_urgency", "medium")
+
+        is_sensitive = rules[category].get("sensitive", False)
+        multiple_matches = len(matched_categories) > 1
+
+        human_review = is_sensitive or multiple_matches
         confidence = 0.75 if len(matched_categories) == 1 else 0.60
-
-        if category in ["financial_crime", "court_legal", "police_security", "health"]:
-            urgency = "high"
-        elif category in ["general_administration", "civil_registry", "land_property", "labor_employment"]:
-            urgency = "medium"
-        else:
-            urgency = "low"
 
     return {
         "input_transcript": transcript,
