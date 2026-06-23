@@ -1,0 +1,16 @@
+category_id,primary_institution,secondary_institution,route_reason,requires_human_review,notes
+court_legal,Justice institution / court clerk,Public prosecutor,Legal cases require court or justice handling,yes,Used for court hearings charges judgments lawyers accused persons and case files
+financial_crime,Justice institution / financial investigation authority,Public prosecutor,Financial crimes require legal and financial investigation,yes,Used for money laundering suspicious funds bank accounts companies invoices assets
+civil_registry,Commune civil registry office,Local administration,Civil status documents are handled by commune civil registry services,maybe,Used for birth certificates national ID family book marriage or death records
+municipal_services,Commune / municipality,Local public works service,Local services are usually handled by commune or municipality,no,Used for garbage roads street lighting local permits and administrative delays
+land_property,Land registry / conservation foncière,Commune or court,Property issues may require land registry or legal review,yes,Used for land ownership real estate building permits property certificate disputes
+police_security,Police / gendarmerie,Public prosecutor,Security or criminal incidents require police or prosecutor handling,yes,Used for police reports theft assault threats violence or public safety
+health,Hospital administration / health authority,Ministry or regional health directorate,Health service complaints should go to health administration,maybe,Used for hospital refusal treatment delay emergency care medical complaint
+education,School or university administration,Education authority,Education complaints go to the relevant educational institution or authority,maybe,Used for school university enrollment grades teacher complaint scholarship
+utilities,Utility provider,Commune or regulator,Water electricity internet and billing issues go to provider,no,Used for outages high bills connection problems electricity water internet
+transport,Transport authority,Commune or police depending on issue,Transport complaints go to transport authority or commune,no,Used for taxi bus public transport road traffic and transport permits
+tax_business,Tax authority / commerce administration,Commercial court or local administration,Business and tax issues require tax or commercial administration,maybe,Used for company registration taxes invoices commercial permits
+social_protection,Social protection authority,Local administration,Social support cases go to social services or CNSS-related bodies,maybe,Used for aid pension CNSS disability support vulnerable citizens
+labor_employment,Labor inspectorate / employment authority,CNSS or social protection authority,Labor complaints require employment or social protection review,maybe,Used for salary contract employer CNSS workplace complaint
+general_administration,Relevant public administration,Commune or prefecture,Generic administrative requests need routing based on document or institution,maybe,Used for delayed file missing answer blocked request unclear public service
+unclear_needs_review,Human employee review,None,Unclear cases should not be automatically routed,yes,Used when transcript is incomplete ambiguous or unsafe to classify
