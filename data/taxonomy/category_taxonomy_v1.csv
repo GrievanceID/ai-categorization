@@ -1,0 +1,16 @@
+category_id,category_name,definition,example_keywords,routing_hint,always_human_review
+court_legal,Court / Legal,Court case or legal procedure involving judge lawyer accused hearing or court file,محكمة; جلسة; متهم; محامي; قاضي; حكم; ملف; tribunal; avocat,Justice institution / court clerk,yes
+financial_crime,Financial Crime,Money laundering suspicious funds bank accounts assets invoices companies or financial evidence,غسل الأموال; تبييض الأموال; حسابات بنكية; تحويلات; فواتير; عقارات; شركات; blanchiment,Justice institution / financial investigation authority,yes
+civil_registry,Civil Registry,Identity documents birth certificate national card family book or civil status documents,عقد الازدياد; الحالة المدنية; البطاقة الوطنية; كناش الحالة المدنية; CIN,Commune / civil registry office,maybe
+municipal_services,Municipal Services,Local commune issues such as garbage roads lighting local services or administrative delay,الجماعة; المقاطعة; الزبالة; الإنارة; الطريق; الرخصة,Commune / municipality,no
+land_property,Land / Property,Land ownership real estate construction permit property certificate or land registry,عقار; أرض; ملكية; المحافظة العقارية; رخصة البناء,Land registry / commune / court,yes
+police_security,Police / Security,Police report theft assault threat gendarmerie police or public safety issue,محضر; الشرطة; الأمن الوطني; الدرك; سرقة; اعتداء; تهديد,Police / gendarmerie / prosecutor,yes
+health,Health,Hospital clinic emergency care treatment delay medical complaint or health service issue,مستشفى; طبيب; علاج; استعجالي; صحة; hôpital,Hospital administration / health authority,maybe
+education,Education,School university enrollment scholarship teacher complaint grade or education service issue,مدرسة; جامعة; أستاذ; تلميذ; تسجيل; منحة,Education institution / ministry,maybe
+utilities,Utilities,Water electricity internet bill outage or utility service problem,الماء; الكهرباء; الضو; فاتورة; انقطاع; ONEE,Utility provider,no
+transport,Transport,Bus taxi road transport license traffic or public transport complaint,طاكسي; حافلة; طريق; نقل; رخصة السياقة,Transport authority / commune,no
+tax_business,Tax / Business Admin,Company tax commercial register invoice business permit or business administration issue,شركة; ضريبة; سجل تجاري; فاتورة; رخصة تجارية,Tax authority / commerce administration,maybe
+social_protection,Social Protection,Social aid pension CNSS disability support or vulnerable citizen support,دعم; معاش; CNSS; تعويض; مساعدة اجتماعية,Social protection authority,maybe
+labor_employment,Labor / Employment,Work contract salary employer CNSS labor complaint or workplace issue,خدمة; عقد عمل; أجرة; مشغل; CNSS; تصريح,Labor inspectorate / social protection,maybe
+general_administration,General Administration,Administrative delay missing response file blocked or unclear public service request,طلب; ملف; تأخر; جواب; إدارة; وثيقة,Relevant public administration,maybe
+unclear_needs_review,Unclear / Needs Review,Transcript is unclear incomplete or cannot be routed safely,غير واضح; غير مفهوم; ناقص,Human employee review,yes
