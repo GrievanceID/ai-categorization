@@ -1,0 +1,47 @@
+category_id,subcategory_id,subcategory_ar,likely_institution,sector,urgency,human_review_required,notes
+administration_generale,delai_traitement,تأخر المعالجة وعدم الرد,الإدارة المعنية حسب مضمون الشكاية,الإدارة العامة,متوسط,maybe,Needs institution/entity extraction
+administration_generale,refus_service,رفض الخدمة بدون سبب,الإدارة المعنية حسب مضمون الشكاية,الإدارة العامة,متوسط,maybe,Needs review if service refusal affects citizen rights
+administration_generale,corruption,فساد ورشوة,الهيئة الوطنية للنزاهة والوقاية من الرشوة ومحاربتها / الإدارة المعنية,محاربة الفساد,عالي,yes,Sensitive corruption case
+administration_generale,mauvais_comportement,سوء تصرف موظف إداري,الإدارة المعنية / المسؤول الإداري المباشر,الإدارة العامة,متوسط,maybe,May need human review
+
+sante,urgence_negligee,إهمال حالة طارئة طبية,وزارة الصحة / المديرية الجهوية للصحة / المستشفى المعني,الصحة,عالي,yes,Emergency medical case
+sante,medicaments,غياب الأدوية ومشاكل راميد,وزارة الصحة / المستشفى أو المركز الصحي المعني,الصحة,متوسط,maybe,Health access issue
+sante,mauvaise_prise_en_charge,سوء الاستقبال في المستشفى,إدارة المستشفى / المديرية الجهوية للصحة,الصحة,متوسط,maybe,Hospital service complaint
+sante,hygiene,نظافة المرفق الصحي,إدارة المستشفى / المديرية الجهوية للصحة,الصحة,متوسط,maybe,Health facility hygiene issue
+
+education,inscription,مشكل التسجيل والالتحاق بالمدرسة,المؤسسة التعليمية / المديرية الإقليمية للتعليم,التعليم,متوسط,maybe,Routing depends on school level
+education,violence_scolaire,عنف مدرسي,المؤسسة التعليمية / المديرية الإقليمية للتعليم,التعليم,عالي,yes,Safety issue
+education,infrastructure,بنية تحتية متردية للمدرسة,وزارة التربية الوطنية / المديرية الإقليمية,التعليم,متوسط,maybe,School infrastructure issue
+education,bourse,منحة ومساعدة اجتماعية لم تُصرف,الجهة المسؤولة عن المنح / المؤسسة التعليمية,التعليم,متوسط,maybe,Scholarship or aid issue
+
+services_municipaux,dechets,جمع النفايات والنظافة,الجماعة أو المقاطعة المعنية,الجماعات الترابية,منخفض,no,Garbage collection is municipal not environment
+services_municipaux,eclairage,الإنارة العمومية,الجماعة أو المقاطعة المعنية,الجماعات الترابية,منخفض,no,Local lighting issue
+services_municipaux,voirie,الطرق والأرصفة المتهالكة,الجماعة أو المقاطعة / مصلحة الأشغال المحلية,الجماعات الترابية,منخفض,no,Local road and pavement issue
+services_municipaux,espaces_verts,المساحات الخضراء والحدائق,الجماعة أو المقاطعة المعنية,الجماعات الترابية,منخفض,no,Local park service issue
+services_municipaux,marches,الأسواق والتجارة غير المنظمة,الجماعة / السلطة المحلية,الجماعات الترابية,متوسط,maybe,May involve local authority
+
+eau_electricite,coupure_eau,انقطاع الماء,ONEE / المزود المحلي للماء,الماء والكهرباء,عالي,no,Water outage
+eau_electricite,coupure_electricite,انقطاع الكهرباء,ONEE / المزود المحلي للكهرباء,الماء والكهرباء,عالي,no,Electricity outage
+eau_electricite,facture_abusive,فاتورة مبالغ فيها وخطأ في الفوترة,مزود الماء أو الكهرباء / مصلحة الزبناء,الماء والكهرباء,متوسط,no,Billing complaint
+eau_electricite,raccordement,رفض أو تأخر الربط بالشبكة,ONEE / المزود المحلي,الماء والكهرباء,متوسط,maybe,Connection delay may need review
+
+justice,delai_jugement,تأخر البت في القضية,وزارة العدل / المحكمة المختصة,العدل,عالي,yes,Court delay
+justice,execution_jugement,حكم لم ينفذ,وزارة العدل / المحكمة المختصة,العدل,عالي,yes,Judgment execution issue
+justice,detention_arbitraire,اعتقال تعسفي,وزارة العدل / النيابة العامة / الجهة المختصة,العدل,عالي,yes,Highly sensitive
+justice,acces_avocat,رفض حق التمثيل القانوني,وزارة العدل / المحكمة المختصة,العدل,عالي,yes,Legal rights issue
+
+police_securite,violence_policiere,عنف وتجاوزات الشرطة,المديرية العامة للأمن الوطني / الجهة المختصة,الأمن,عالي,yes,Sensitive police complaint
+police_securite,plainte_non_traitee,شكاية جنائية لم تعالج,الأمن الوطني / الدرك الملكي / النيابة العامة,الأمن,عالي,yes,Criminal complaint not processed
+police_securite,insecurite,انعدام الأمن في الحي,الأمن الوطني / الدرك الملكي / السلطات المحلية,الأمن,عالي,yes,Public safety issue
+
+emploi,licenciement_abusif,فصل تعسفي من العمل,مفتشية الشغل / المحكمة الاجتماعية حسب الحالة,التشغيل,متوسط,yes,Labor dispute
+emploi,salaire_non_verse,راتب لم يصرف,مفتشية الشغل,التشغيل,متوسط,maybe,Salary complaint
+emploi,cnss_non_declare,عدم التصريح بالصندوق الوطني للضمان الاجتماعي,CNSS / مفتشية الشغل,التشغيل,متوسط,maybe,CNSS declaration issue
+emploi,discrimination,تمييز في بيئة العمل,مفتشية الشغل / الجهة المختصة,التشغيل,متوسط,yes,Sensitive workplace issue
+
+etat_civil,cin_passeport,البطاقة الوطنية وجواز السفر معلق أو مرفوض,السلطات المحلية / الجهة المكلفة بالوثائق الرسمية,الداخلية,متوسط,maybe,Identity document issue
+etat_civil,acte_naissance,رسم الولادة وعقد الزواج,مكتب الحالة المدنية / الجماعة الترابية,الداخلية,متوسط,maybe,Civil registry issue
+etat_civil,nationalite,إشكالية الجنسية,السلطات المختصة / وزارة العدل أو الداخلية حسب الحالة,الداخلية,عالي,yes,Sensitive nationality issue
+etat_civil,mre,الحالة المدنية للمغاربة المقيمين بالخارج,القنصلية / مكتب الحالة المدنية,الداخلية,متوسط,maybe,MRE civil status issue
+
+autre,unknown,أخرى غير مصنفة,مراجعة بشرية,غير محدد,منخفض,yes,Do not auto-route unclear category
