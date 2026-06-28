@@ -1,0 +1,17 @@
+category_id,category_ar,likely_institution,sector,urgency_default,human_review_required,notes
+administration_generale,الإدارة العامة,الإدارة المعنية حسب مضمون الشكاية,الإدارة العامة,متوسط,maybe,Needs entity extraction because the exact administration depends on the complaint
+sante,الصحة,وزارة الصحة / المديرية الجهوية للصحة / المستشفى المعني,الصحة,عالي,maybe,Emergency or patient-safety cases require human review
+education,التعليم,وزارة التربية الوطنية / المؤسسة التعليمية المعنية,التعليم,متوسط,maybe,Routing depends on school university or scholarship issue
+services_municipaux,الخدمات البلدية,الجماعة أو المقاطعة المعنية,الجماعات الترابية,منخفض,no,Garbage lighting local roads and local services go to commune or municipality
+eau_electricite,الماء والكهرباء,ONEE / المزود المحلي للماء أو الكهرباء,الماء والكهرباء,عالي,no,Routing may depend on region and service provider
+logement_urbanisme,السكن والتعمير,وزارة إعداد التراب الوطني والتعمير / الوكالة الحضرية / الجماعة,السكن والتعمير,متوسط,yes,Construction permits and urban planning may involve several institutions
+foncier_cadastre,العقار والمسح العقاري,المحافظة العقارية / الوكالة الوطنية للمحافظة العقارية والمسح العقاري,العقار,متوسط,yes,Property disputes and land registry issues need validation
+justice,العدالة,وزارة العدل / المحكمة المختصة,العدل,عالي,yes,Court and legal complaints are sensitive and need human review
+police_securite,الأمن والشرطة,الأمن الوطني / الدرك الملكي / السلطات المحلية,الأمن,عالي,yes,Security and police complaints are sensitive
+fiscal_financier,الضرائب والشؤون المالية,إدارة الضرائب / الخزينة / المؤسسة المالية المعنية,المالية والضرائب,متوسط,yes,Financial and tax issues may need domain validation
+emploi,التشغيل وحقوق العمل,مفتشية الشغل / وزارة التشغيل / CNSS,التشغيل,متوسط,maybe,Employment complaints may involve labor inspectorate CNSS or court
+transport,النقل,وزارة النقل / الجهة المسؤولة عن النقل / الجماعة حسب الحالة,النقل,منخفض,no,Routing depends on taxi bus road or license issue
+etat_civil,الحالة المدنية والوثائق الرسمية,الجماعة الترابية / مكتب الحالة المدنية / السلطات المحلية,الداخلية,متوسط,maybe,Identity documents and civil status may need local routing
+environnement,البيئة والتلوث,وزارة الانتقال الطاقي والتنمية المستدامة / السلطات المحلية,البيئة,متوسط,maybe,Environmental complaints may involve commune or environmental authority
+telecoms_numerique,الاتصالات والخدمات الرقمية,ANRT / مشغل الاتصالات المعني,الاتصالات,منخفض,no,Internet mobile and telecom issues go to provider or regulator
+autre,أخرى غير مصنفة,مراجعة بشرية,غير محدد,منخفض,yes,Unclassified complaints should be reviewed before routing
