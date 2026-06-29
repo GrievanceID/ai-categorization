@@ -1,0 +1,80 @@
+{"id": 43, "text": "لقيت ورقة طلب تسجيل ولدي فالمدرسة مرفوضة بلا سبب", "label": "education", "urgency": "متوسط", "language": "darija", "label_id": 2}
+{"id": 42, "text": "إنوي قطعات ليا الليني بلا سبب مع اني خلصت جميع الفواتير", "label": "telecoms_numerique", "urgency": "منخفض", "language": "darija", "label_id": 13}
+{"id": 92, "text": "معمل قريب من الدار ديالنا كيصب النفايات مباشرة فالنهر", "label": "environnement", "urgency": "عالي", "language": "darija", "label_id": 4}
+{"id": 10, "text": "عندي تيران و جيراني بنا عليه بلا رخصة و البلدية ماتديرش والو", "label": "logement_urbanisme", "urgency": "متوسط", "language": "darija", "label_id": 9}
+{"id": 66, "text": "الشركة خسرات وماعطاتش الخدامة حتى جزء فالبطالة", "label": "emploi", "urgency": "متوسط", "language": "darija", "label_id": 3}
+{"id": 51, "text": "تطردت بلا إشعار مسبق ولا تعويض بعد 10 سنين ديال الخدمة", "label": "emploi", "urgency": "متوسط", "language": "darija", "label_id": 3}
+{"id": 2, "text": "مراتي مريضة و المستشفى ماقبلوهاش حتى بلا راميد", "label": "sante", "urgency": "عالي", "language": "darija", "label_id": 11}
+{"id": 71, "text": "الكنسس كترفض تصرف ليا التعويضات ديال المرض من شهرين", "label": "fiscal_financier", "urgency": "عالي", "language": "darija", "label_id": 6}
+{"id": 16, "text": "المستشفى ماعندومش دواء السرطان و مريضي كيتصبر من شهر", "label": "sante", "urgency": "عالي", "language": "darija", "label_id": 11}
+{"id": 79, "text": "الجار ديالنا كيرمي نفايات كيماوية قريب من الدار ديالنا و ريحتها كتضر بصحتنا", "label": "environnement", "urgency": "عالي", "language": "darija", "label_id": 4}
+{"id": 74, "text": "الجار ديالي بنا حيط غطالي كامل باب الدخول ديالي", "label": "logement_urbanisme", "urgency": "متوسط", "language": "darija", "label_id": 9}
+{"id": 11, "text": "الفاكتورة ديال الما جات ب 3000 درهم و احنا ماخدامناش الما مزيان", "label": "eau_electricite", "urgency": "عالي", "language": "darija", "label_id": 1}
+{"id": 56, "text": "المحكمة نفذات حكم ضدي وانا مازال فطور الاستئناف", "label": "justice", "urgency": "عالي", "language": "darija", "label_id": 8}
+{"id": 57, "text": "الواد قريب من الحي ديالنا فايض و البلدية ماداراتش والو باش تحميه", "label": "environnement", "urgency": "عالي", "language": "darija", "label_id": 4}
+{"id": 73, "text": "مدير المدرسة كيتحرش بالتلاميذ و كيهينهم قدام الجميع", "label": "education", "urgency": "عالي", "language": "darija", "label_id": 2}
+{"id": 46, "text": "البوص ماكيمرش على الحي ديالنا من شهر", "label": "transport", "urgency": "منخفض", "language": "darija", "label_id": 14}
+{"id": 49, "text": "جيراني كيرميو الزبالة قدام الدار ديالي و البلدية ماعملاتش والو من 3 شهور", "label": "services_municipaux", "urgency": "منخفض", "language": "darija", "label_id": 12}
+{"id": 93, "text": "القطر وقع فحادثة و كاين جرحى و ماجا حتى سيكور من شوية", "label": "transport", "urgency": "عالي", "language": "darija", "label_id": 14}
+{"id": 77, "text": "كنتسنى البرميي ديال السياقة من 8 شهور بعد ما نجحت فالامتحان", "label": "transport", "urgency": "منخفض", "language": "darija", "label_id": 14}
+{"id": 38, "text": "مدرسة ولادي ماعندهاش ماء صالح للشرب و الحمامات معطلة", "label": "education", "urgency": "متوسط", "language": "darija", "label_id": 2}
+{"id": 31, "text": "التاكسي طلب مني 200 درهم للمسافة ديال 10 درهم و حتى العداد ماعندوش", "label": "transport", "urgency": "منخفض", "language": "darija", "label_id": 14}
+{"id": 22, "text": "البنك حسب من حسابي 5000 درهم بلا ما يعلمني وماكاين حتى تفسير", "label": "fiscal_financier", "urgency": "عالي", "language": "darija", "label_id": 6}
+{"id": 33, "text": "ولدي تطرد من المدرسة بلا إنذار ولا تفسير رسمي", "label": "education", "urgency": "متوسط", "language": "darija", "label_id": 2}
+{"id": 97, "text": "واحد استعمل البطاقة البنكية ديالي عبر الانترنت و سرق منها 3000 درهم", "label": "telecoms_numerique", "urgency": "عالي", "language": "darija", "label_id": 13}
+{"id": 81, "text": "ماعندي انترنت من جوج سيمانة و اورنج ماعملاتش والو حتى بعد الشكايات", "label": "telecoms_numerique", "urgency": "منخفض", "language": "darija", "label_id": 13}
+{"id": 50, "text": "شركة البناء خداتنا 200 ألف درهم وماباناتش الشقة حتى دبا", "label": "logement_urbanisme", "urgency": "عالي", "language": "darija", "label_id": 9}
+{"id": 84, "text": "البولمان ديال الحي ديالنا مهبال و بناو على الأرض ديالنا بلا رخصة", "label": "foncier_cadastre", "urgency": "متوسط", "language": "darija", "label_id": 7}
+{"id": 27, "text": "الحي ديالنا ماكاين فيه حتى إنارة عمومية و الأمن معدوم بالليل", "label": "services_municipaux", "urgency": "متوسط", "language": "darija", "label_id": 12}
+{"id": 88, "text": "طفلة فالحي تعرضات للعنف من طرف المعلم ديالها وحتى واحد ماكيتحرك", "label": "education", "urgency": "عالي", "language": "darija", "label_id": 2}
+{"id": 34, "text": "الإدارة ماعطانيش البطاقة الوطنية ديالي من 8 شهور وماعندي والو", "label": "etat_civil", "urgency": "متوسط", "language": "darija", "label_id": 5}
+{"id": 9, "text": "المدير ديال المدرسة طرد ولدي من القسم بلا ما يعطينا اي سبب", "label": "education", "urgency": "متوسط", "language": "darija", "label_id": 2}
+{"id": 48, "text": "المستشفى رفض يستقبل امي فحالة طارئة بسبب غياب سرير", "label": "sante", "urgency": "عالي", "language": "darija", "label_id": 11}
+{"id": 60, "text": "البوليس تخدو ولدي وماعرفناش فين هو حتى دبا", "label": "police_securite", "urgency": "عالي", "language": "darija", "label_id": 10}
+{"id": 64, "text": "الطبيب فالمستوصف غايب ديما و احنا ماعندناش طبيب خاص", "label": "sante", "urgency": "عالي", "language": "darija", "label_id": 11}
+{"id": 75, "text": "البوليس ماقبلوش شكايتي على لي سرق الدار ديالي و قالولي ارجع نهار تخور", "label": "police_securite", "urgency": "عالي", "language": "darija", "label_id": 10}
+{"id": 45, "text": "الراتب ديالي ناقص من 6 شهور و المسؤول كيقول ماعندوش مال", "label": "emploi", "urgency": "متوسط", "language": "darija", "label_id": 3}
+{"id": 99, "text": "خدمت 20 عام فالدولة و ماعطاونيش المحيميات ديالي ديال الخروج", "label": "emploi", "urgency": "متوسط", "language": "darija", "label_id": 3}
+{"id": 53, "text": "شرطي أوقفني فالطريق و خدا مني 500 درهم بلا اي مخالفة", "label": "police_securite", "urgency": "عالي", "language": "darija", "label_id": 10}
+{"id": 86, "text": "المشغل ديالي ميز ضدي بسبب الدين ديالي فترقية", "label": "emploi", "urgency": "متوسط", "language": "darija", "label_id": 3}
+{"id": 13, "text": "الباطرون ماخلصنيش من 3 شهور و كيرفض يعطيني شهادة الخدمة ديالي", "label": "emploi", "urgency": "متوسط", "language": "darija", "label_id": 3}
+{"id": 37, "text": "المديرية العامة للضرائب صيفطات ليا غرامة كبيرة بلا دليل ولا تبرير", "label": "fiscal_financier", "urgency": "متوسط", "language": "darija", "label_id": 6}
+{"id": 24, "text": "القاضي ماعطانيش حتى موعد من 3 سنين و القضية مازال موقوفة", "label": "justice", "urgency": "عالي", "language": "darija", "label_id": 8}
+{"id": 40, "text": "واحد نصب عليا عبر الانترنت و سرق المعلومات البنكية ديالي", "label": "telecoms_numerique", "urgency": "عالي", "language": "darija", "label_id": 13}
+{"id": 41, "text": "البلدية هدات الدار ديالي بلا ما تعطيني اي إنذار ولا تعويض", "label": "logement_urbanisme", "urgency": "عالي", "language": "darija", "label_id": 9}
+{"id": 19, "text": "جيراني بنا دار عليا و غطالي الضو و الكوميون ماعملاتش والو", "label": "logement_urbanisme", "urgency": "متوسط", "language": "darija", "label_id": 9}
+{"id": 67, "text": "تلقيت مخالفة جبائية بلا تبرير مع اني ماعندي حتى نشاط تجاري", "label": "fiscal_financier", "urgency": "متوسط", "language": "darija", "label_id": 6}
+{"id": 62, "text": "الشبكة ديال اتصالات المغرب مقطوعة فكامل الدوار من 5 ايام", "label": "telecoms_numerique", "urgency": "منخفض", "language": "darija", "label_id": 13}
+{"id": 61, "text": "عقد الزواج ديالي ماسجلوهش عند العدل وهادي 4 شهور", "label": "etat_civil", "urgency": "متوسط", "language": "darija", "label_id": 5}
+{"id": 8, "text": "المحكمة جمدات ملفي من سنتين وماعطاونيش حتى موعد", "label": "justice", "urgency": "عالي", "language": "darija", "label_id": 8}
+{"id": 35, "text": "تعرضت لاعتقال تعسفي وقضيت 3 ايام فالحبس بلا اي تهمة", "label": "police_securite", "urgency": "عالي", "language": "darija", "label_id": 10}
+{"id": 100, "text": "الحكم القضائي صدر لصالحي من سنتين و المحكوم عليه مازال ماتنفذش", "label": "justice", "urgency": "عالي", "language": "darija", "label_id": 8}
+{"id": 47, "text": "المفتش ديال الضريبة جا وعطاني غرامة كبيرة بلا ما يشوف الملفات ديالي", "label": "fiscal_financier", "urgency": "متوسط", "language": "darija", "label_id": 6}
+{"id": 3, "text": "خدمت 3 سنين فشركة و ماخلصوش الكنسس والو", "label": "emploi", "urgency": "متوسط", "language": "darija", "label_id": 3}
+{"id": 52, "text": "الما عندنا كيطلع بلون خضر و ريح خايبة و راديما ماعملاتش والو", "label": "eau_electricite", "urgency": "عالي", "language": "darija", "label_id": 1}
+{"id": 17, "text": "البلدية كترفض تجمع الزبالة فالحي ديالنا من جوج سيمانة", "label": "services_municipaux", "urgency": "منخفض", "language": "darija", "label_id": 12}
+{"id": 39, "text": "الحاكم حكم عليا ب 3 سنين حبس وماعندي محامي وماعطاونيش وقت", "label": "justice", "urgency": "عالي", "language": "darija", "label_id": 8}
+{"id": 59, "text": "الملف ديال استرداد الضريبة على القيمة المضافة موقوف من 18 شهر بلا تفسير", "label": "fiscal_financier", "urgency": "متوسط", "language": "darija", "label_id": 6}
+{"id": 69, "text": "المستشفى ماعندوش الدواء ديالي و كيقولي نشريه من برا ب 3 مرات ثمنه", "label": "sante", "urgency": "عالي", "language": "darija", "label_id": 11}
+{"id": 23, "text": "صوقت على الباصبور ديالي من 6 شهور و حتى واحد ماكيجاوبني", "label": "etat_civil", "urgency": "متوسط", "language": "darija", "label_id": 5}
+{"id": 63, "text": "عندي تيتر فونسيي و جيراني كيدعيو انهم مولاه و المحكمة مازالت ساكتة", "label": "foncier_cadastre", "urgency": "متوسط", "language": "darija", "label_id": 7}
+{"id": 25, "text": "معمل قريب من دارنا كيخرج دخان كيضر بصحتنا و دراري", "label": "environnement", "urgency": "متوسط", "language": "darija", "label_id": 4}
+{"id": 6, "text": "طفلي مريض وماقدرناش ندخلوه للمستشفى بسبب غياب الأطباء", "label": "sante", "urgency": "عالي", "language": "darija", "label_id": 11}
+{"id": 7, "text": "الكهرباء مقطوعة عندنا من 4 ايام وماكاين حتى جواب من اونيي", "label": "eau_electricite", "urgency": "عالي", "language": "darija", "label_id": 1}
+{"id": 68, "text": "صيفطت شكاية على بناء غير قانوني للكوميون من 6 شهور بلا جواب", "label": "logement_urbanisme", "urgency": "متوسط", "language": "darija", "label_id": 9}
+{"id": 83, "text": "البلدية كترفض تعطي رخصة البناء بلا سبب قانوني", "label": "logement_urbanisme", "urgency": "متوسط", "language": "darija", "label_id": 9}
+{"id": 20, "text": "تعرضت لحادثة سير و شركة التأمين كترفض تعوضني من 8 شهور", "label": "transport", "urgency": "متوسط", "language": "darija", "label_id": 14}
+{"id": 80, "text": "الطرام وقف فجأة و بعض الركاب تجرحو", "label": "transport", "urgency": "عالي", "language": "darija", "label_id": 14}
+{"id": 44, "text": "عندي شكاية على جيراني لي كيبنيو فالأرض ديالنا و الكوميون مازالت ساكتة", "label": "foncier_cadastre", "urgency": "متوسط", "language": "darija", "label_id": 7}
+{"id": 91, "text": "جواز السفر ديالي سالات صلاحيته وطلبت تجديده من 7 شهور بلا جواب", "label": "etat_civil", "urgency": "متوسط", "language": "darija", "label_id": 5}
+{"id": 21, "text": "المدرس كيضرب الولاد فالقسم و الإدارة ماعملاتش والو", "label": "education", "urgency": "عالي", "language": "darija", "label_id": 2}
+{"id": 1, "text": "الما مقطع من 3 ايام فدارنا و راديما ماكيجيبوش الجواب", "label": "eau_electricite", "urgency": "عالي", "language": "darija", "label_id": 1}
+{"id": 96, "text": "المستشفى عندهم واحد الانفيرمي كيضرب المرضى وماعندوش خلاق", "label": "sante", "urgency": "عالي", "language": "darija", "label_id": 11}
+{"id": 58, "text": "تسجلت فبرنامج السكن الاجتماعي من 7 سنين وماجاني حتى رد", "label": "logement_urbanisme", "urgency": "متوسط", "language": "darija", "label_id": 9}
+{"id": 94, "text": "الموظف فالمصلحة العمومية رفض يقبل الملف ديالي بلا اي مبرر قانوني", "label": "administration_generale", "urgency": "متوسط", "language": "darija", "label_id": 0}
+{"id": 54, "text": "المدرسة ديال ولدي ماعندهاش كتب مدرسية و العام بدا من شهر", "label": "education", "urgency": "متوسط", "language": "darija", "label_id": 2}
+{"id": 90, "text": "واحد فالبلدية خدا منا الفلوس باش يدير المولكية و غاب", "label": "administration_generale", "urgency": "عالي", "language": "darija", "label_id": 0}
+{"id": 26, "text": "خدمت فالإدارة و ماعطاونيش الكونجي ديالي من 3 سنين", "label": "emploi", "urgency": "متوسط", "language": "darija", "label_id": 3}
+{"id": 72, "text": "الخدامة فالكوميون كيضربوني معنوي و كيهددوني باش نوقع على بلانكا", "label": "administration_generale", "urgency": "متوسط", "language": "darija", "label_id": 0}
+{"id": 85, "text": "الشكاية ديالي عند وزارة الصحة ماتلقاتش حتى رد من سنة كاملة", "label": "administration_generale", "urgency": "متوسط", "language": "darija", "label_id": 0}
+{"id": 78, "text": "إدارة الضرائب ماعطانيش المبلغ لي خلصت زيادة من 3 سنين", "label": "fiscal_financier", "urgency": "متوسط", "language": "darija", "label_id": 6}

@@ -1,0 +1,37 @@
+{
+  "label_to_id": {
+    "administration_generale": 0,
+    "eau_electricite": 1,
+    "education": 2,
+    "emploi": 3,
+    "environnement": 4,
+    "etat_civil": 5,
+    "fiscal_financier": 6,
+    "foncier_cadastre": 7,
+    "justice": 8,
+    "logement_urbanisme": 9,
+    "police_securite": 10,
+    "sante": 11,
+    "services_municipaux": 12,
+    "telecoms_numerique": 13,
+    "transport": 14
+  },
+  "id_to_label": {
+    "0": "administration_generale",
+    "1": "eau_electricite",
+    "2": "education",
+    "3": "emploi",
+    "4": "environnement",
+    "5": "etat_civil",
+    "6": "fiscal_financier",
+    "7": "foncier_cadastre",
+    "8": "justice",
+    "9": "logement_urbanisme",
+    "10": "police_securite",
+    "11": "sante",
+    "12": "services_municipaux",
+    "13": "telecoms_numerique",
+    "14": "transport"
+  },
+  "num_labels": 15
+}

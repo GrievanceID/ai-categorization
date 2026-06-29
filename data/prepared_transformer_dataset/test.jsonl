@@ -1,0 +1,20 @@
+{"id": 65, "text": "الطريق الرئيسية ديال الدوار ديالنا ماكيمكنش تمشي فيها بعد الشتا", "label": "services_municipaux", "urgency": "متوسط", "language": "darija", "label_id": 12}
+{"id": 30, "text": "التقاعد ديالي ماصرفوهش من 4 شهور و الصندوق ماكيجاوبنيش", "label": "fiscal_financier", "urgency": "عالي", "language": "darija", "label_id": 6}
+{"id": 28, "text": "الطبيب فالمستشفى العمومي كيرفض يداوي بابا بلا رشوة", "label": "sante", "urgency": "عالي", "language": "darija", "label_id": 11}
+{"id": 89, "text": "مركز الصحة ديال الكوميون مسدود من 3 شهور بسبب غياب الموظفين", "label": "sante", "urgency": "عالي", "language": "darija", "label_id": 11}
+{"id": 98, "text": "الكوميون سمحات بمطرح عشوائي جنب المدرسة ديالنا", "label": "environnement", "urgency": "عالي", "language": "darija", "label_id": 4}
+{"id": 5, "text": "البوليس ضربو ولدي بلا ما يديرو والو و ماعندوش دامبا", "label": "police_securite", "urgency": "عالي", "language": "darija", "label_id": 10}
+{"id": 55, "text": "المستشفى كيرفض يعطيني النتائج ديال التحاليل من 3 سيمانة", "label": "sante", "urgency": "عالي", "language": "darija", "label_id": 11}
+{"id": 76, "text": "المياه الملوثة فالحي ديالنا سببات أمراض لدراري كثيرين", "label": "environnement", "urgency": "عالي", "language": "darija", "label_id": 4}
+{"id": 12, "text": "موظف فالبلدية طلب مني رشوة باش يعطيني وثيقة عادية", "label": "administration_generale", "urgency": "متوسط", "language": "darija", "label_id": 0}
+{"id": 70, "text": "البلدية هدمات الحانوت ديالي بلا إشعار ولا تعويض", "label": "logement_urbanisme", "urgency": "عالي", "language": "darija", "label_id": 9}
+{"id": 87, "text": "القاضي وقع فالجيبي و حكم عليا بلا ما يسمع حجتي", "label": "justice", "urgency": "عالي", "language": "darija", "label_id": 8}
+{"id": 14, "text": "الروط فالحي ديالنا مكسورة و فيها حفريات كبيرة و وقع بها ناس بزاف", "label": "services_municipaux", "urgency": "متوسط", "language": "darija", "label_id": 12}
+{"id": 18, "text": "شركة الاتصالات كتقطع عليا الانترنت كل يوم مع انني خلصت الفاكتورة", "label": "telecoms_numerique", "urgency": "منخفض", "language": "darija", "label_id": 13}
+{"id": 29, "text": "عندي رسم عقاري و جيراني كيدعيو عليه و المحكمة ماعملاتش والو", "label": "foncier_cadastre", "urgency": "متوسط", "language": "darija", "label_id": 7}
+{"id": 32, "text": "شركة الما كترفض تربطنا بالشبكة مع انو الجيران مربوطين من سنوات", "label": "eau_electricite", "urgency": "عالي", "language": "darija", "label_id": 1}
+{"id": 36, "text": "واد قريب من الحي ديالنا كيتلث و كيدوخ الجو وماعندي مسؤول", "label": "environnement", "urgency": "متوسط", "language": "darija", "label_id": 4}
+{"id": 95, "text": "ورثت تيران و التيتر فونسيي ماقدرناش ننقلوه على اسمنا", "label": "foncier_cadastre", "urgency": "متوسط", "language": "darija", "label_id": 7}
+{"id": 4, "text": "الزبالة فالزقاق ديالنا و البلدية ماكتلتفتش 3 سيمانة", "label": "services_municipaux", "urgency": "منخفض", "language": "darija", "label_id": 12}
+{"id": 15, "text": "رسم الولادة ديال ولدي ماصدرش حتى دبا و عندو 6 أشهر", "label": "etat_civil", "urgency": "متوسط", "language": "darija", "label_id": 5}
+{"id": 82, "text": "الإدارة كترفض تعطيني شهادة الخدمة مع اني خدمت عندها 5 سنين", "label": "emploi", "urgency": "متوسط", "language": "darija", "label_id": 3}
