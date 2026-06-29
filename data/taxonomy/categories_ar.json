@@ -1,0 +1,190 @@
+{
+  "version": "1.2",
+  "description": "تصنيف الشكايات المواطنية المغربية — 16 فئة مع فئات فرعية",
+  "categories": [
+    {
+      "id": "administration_generale",
+      "label_ar": "الإدارة العامة",
+      "label_darija": "الإدارة العامة",
+      "default_urgency": "متوسط",
+      "subcategories": [
+        { "id": "delai_traitement", "label_ar": "تأخر المعالجة وعدم الرد" },
+        { "id": "refus_service", "label_ar": "رفض الخدمة بدون سبب" },
+        { "id": "corruption", "label_ar": "فساد ورشوة" },
+        { "id": "mauvais_comportement", "label_ar": "سوء تصرف موظف إداري" }
+      ]
+    },
+    {
+      "id": "sante",
+      "label_ar": "الصحة",
+      "label_darija": "الصحة",
+      "default_urgency": "عالي",
+      "subcategories": [
+        { "id": "urgence_negligee", "label_ar": "إهمال حالة طارئة طبية" },
+        { "id": "medicaments", "label_ar": "غياب الأدوية ومشاكل راميد" },
+        { "id": "mauvaise_prise_en_charge", "label_ar": "سوء الاستقبال في المستشفى" },
+        { "id": "hygiene", "label_ar": "نظافة المرفق الصحي" }
+      ]
+    },
+    {
+      "id": "education",
+      "label_ar": "التعليم",
+      "label_darija": "التعليم",
+      "default_urgency": "متوسط",
+      "subcategories": [
+        { "id": "inscription", "label_ar": "مشكل التسجيل والالتحاق بالمدرسة" },
+        { "id": "violence_scolaire", "label_ar": "عنف مدرسي" },
+        { "id": "infrastructure", "label_ar": "بنية تحتية متردية للمدرسة" },
+        { "id": "bourse", "label_ar": "منحة ومساعدة اجتماعية لم تُصرف" }
+      ]
+    },
+    {
+      "id": "services_municipaux",
+      "label_ar": "الخدمات البلدية",
+      "label_darija": "خدمات البلدية",
+      "default_urgency": "منخفض",
+      "subcategories": [
+        { "id": "dechets", "label_ar": "جمع النفايات والنظافة" },
+        { "id": "eclairage", "label_ar": "الإنارة العمومية" },
+        { "id": "voirie", "label_ar": "الطرق والأرصفة المتهالكة" },
+        { "id": "espaces_verts", "label_ar": "المساحات الخضراء والحدائق" },
+        { "id": "marches", "label_ar": "الأسواق والتجارة غير المنظمة" }
+      ]
+    },
+    {
+      "id": "eau_electricite",
+      "label_ar": "الماء والكهرباء",
+      "label_darija": "الما والكهرباء",
+      "default_urgency": "عالي",
+      "subcategories": [
+        { "id": "coupure_eau", "label_ar": "انقطاع الماء" },
+        { "id": "coupure_electricite", "label_ar": "انقطاع الكهرباء" },
+        { "id": "facture_abusive", "label_ar": "فاتورة مبالغ فيها وخطأ في الفوترة" },
+        { "id": "raccordement", "label_ar": "رفض أو تأخر الربط بالشبكة" }
+      ]
+    },
+    {
+      "id": "logement_urbanisme",
+      "label_ar": "السكن والتعمير",
+      "label_darija": "السكن والتعمير",
+      "default_urgency": "متوسط",
+      "subcategories": [
+        { "id": "construction_illegale", "label_ar": "بناء غير قانوني ونزاع الجيران" },
+        { "id": "permis", "label_ar": "رفض أو تأخر رخصة البناء" },
+        { "id": "expropriation", "label_ar": "نزع الملكية والهدم القسري" },
+        { "id": "logement_social", "label_ar": "السكن الاجتماعي برنامج العمران" }
+      ]
+    },
+    {
+      "id": "foncier_cadastre",
+      "label_ar": "العقار والمسح العقاري",
+      "label_darija": "العقار والمولكية",
+      "default_urgency": "متوسط",
+      "subcategories": [
+        { "id": "titre_foncier", "label_ar": "الرسم العقاري والتسجيل" },
+        { "id": "litige_terrain", "label_ar": "نزاع عقاري" },
+        { "id": "heritage", "label_ar": "الإرث والتركة المجمدة" }
+      ]
+    },
+    {
+      "id": "justice",
+      "label_ar": "العدالة",
+      "label_darija": "العدالة",
+      "default_urgency": "عالي",
+      "subcategories": [
+        { "id": "delai_jugement", "label_ar": "تأخر البت في القضية" },
+        { "id": "execution_jugement", "label_ar": "حكم لم ينفذ" },
+        { "id": "detention_arbitraire", "label_ar": "اعتقال تعسفي" },
+        { "id": "acces_avocat", "label_ar": "رفض حق التمثيل القانوني" }
+      ]
+    },
+    {
+      "id": "police_securite",
+      "label_ar": "الأمن والشرطة",
+      "label_darija": "الأمن والبوليس",
+      "default_urgency": "عالي",
+      "subcategories": [
+        { "id": "violence_policiere", "label_ar": "عنف وتجاوزات الشرطة" },
+        { "id": "plainte_non_traitee", "label_ar": "شكاية جنائية لم تعالج" },
+        { "id": "insecurite", "label_ar": "انعدام الأمن في الحي" }
+      ]
+    },
+    {
+      "id": "fiscal_financier",
+      "label_ar": "الضرائب والشؤون المالية",
+      "label_darija": "الضرائب والمالية",
+      "default_urgency": "متوسط",
+      "subcategories": [
+        { "id": "redressement_fiscal", "label_ar": "تصحيح ضريبي تعسفي" },
+        { "id": "fraude_bancaire", "label_ar": "احتيال بنكي ونصب" },
+        { "id": "remboursement_tva", "label_ar": "استرداد الضريبة على القيمة المضافة معلق" },
+        { "id": "pension_retraite", "label_ar": "معاش التقاعد لم يصرف من الكنسس أو سي إم آر" }
+      ]
+    },
+    {
+      "id": "emploi",
+      "label_ar": "التشغيل وحقوق العمل",
+      "label_darija": "الخدمة وحقوق الخدامة",
+      "default_urgency": "متوسط",
+      "subcategories": [
+        { "id": "licenciement_abusif", "label_ar": "فصل تعسفي من العمل" },
+        { "id": "salaire_non_verse", "label_ar": "راتب لم يصرف" },
+        { "id": "cnss_non_declare", "label_ar": "عدم التصريح بالصندوق الوطني للضمان الاجتماعي" },
+        { "id": "discrimination", "label_ar": "تمييز في بيئة العمل" }
+      ]
+    },
+    {
+      "id": "transport",
+      "label_ar": "النقل",
+      "label_darija": "النقل",
+      "default_urgency": "منخفض",
+      "subcategories": [
+        { "id": "transport_commun", "label_ar": "النقل العام حافلة وطرامواي" },
+        { "id": "permis_conduire", "label_ar": "رخصة السياقة ومدرسة تعليم القيادة" },
+        { "id": "accident_route", "label_ar": "حادثة سير والمسؤولية" },
+        { "id": "taxi_abus", "label_ar": "تجاوزات سيارة الأجرة والنقل غير المرخص" }
+      ]
+    },
+    {
+      "id": "etat_civil",
+      "label_ar": "الحالة المدنية والوثائق الرسمية",
+      "label_darija": "الحالة المدنية والوثائق",
+      "default_urgency": "متوسط",
+      "subcategories": [
+        { "id": "cin_passeport", "label_ar": "البطاقة الوطنية وجواز السفر معلق أو مرفوض" },
+        { "id": "acte_naissance", "label_ar": "رسم الولادة وعقد الزواج" },
+        { "id": "nationalite", "label_ar": "إشكالية الجنسية" },
+        { "id": "mre", "label_ar": "الحالة المدنية للمغاربة المقيمين بالخارج" }
+      ]
+    },
+    {
+      "id": "environnement",
+      "label_ar": "البيئة والتلوث",
+      "label_darija": "البيئة والتلوث",
+      "default_urgency": "متوسط",
+      "subcategories": [
+        { "id": "pollution_air_eau", "label_ar": "تلوث الهواء والماء" },
+        { "id": "decharge_sauvage", "label_ar": "مطرح عشوائي ورمي غير قانوني" },
+        { "id": "nuisances_industrielles", "label_ar": "ضجيج وتلوث صناعي" }
+      ]
+    },
+    {
+      "id": "telecoms_numerique",
+      "label_ar": "الاتصالات والخدمات الرقمية",
+      "label_darija": "الاتصالات والانترنت",
+      "default_urgency": "منخفض",
+      "subcategories": [
+        { "id": "operateur_mobile", "label_ar": "مشغل الهاتف اتصالات المغرب وأورنج وإنوي" },
+        { "id": "internet", "label_ar": "انقطاع الانترنت وجودة رديئة" },
+        { "id": "fraude_numerique", "label_ar": "احتيال إلكتروني ونصب رقمي" }
+      ]
+    },
+    {
+      "id": "autre",
+      "label_ar": "أخرى غير مصنفة",
+      "label_darija": "أخرى",
+      "default_urgency": "منخفض",
+      "subcategories": []
+    }
+  ]
+}
