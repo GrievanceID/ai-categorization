@@ -106,15 +106,15 @@ test_dataset = test_dataset.remove_columns(
     [col for col in test_dataset.column_names if col not in columns_to_keep]
 )
 
-train_dataset.set_format("torch")
-test_dataset.set_format("torch")
+    train_dataset.set_format("torch")
+    test_dataset.set_format("torch")
 
-model = AutoModelForSequenceClassification.from_pretrained(
-        args.model_name,
-        num_labels=num_labels,
-        id2label=id_to_label,
-        label2id=label_to_id
-)
+        model = AutoModelForSequenceClassification.from_pretrained(
+            args.model_name,
+            num_labels=num_labels,
+            id2label=id_to_label,
+            label2id=label_to_id
+        )
 
 training_args = TrainingArguments(
         output_dir=str(RESULTS_DIR / args.output_name),
