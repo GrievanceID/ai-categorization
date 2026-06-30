@@ -29,10 +29,12 @@ RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 def load_jsonl(path):
     rows = []
+
     with open(path, "r", encoding="utf-8") as file:
         for line in file:
             if line.strip():
                 rows.append(json.loads(line))
+
     return rows
 
 
@@ -90,33 +92,34 @@ def main():
             truncation=True,
             max_length=128
         )
-train_dataset = train_dataset.map(tokenize, batched=True)
-test_dataset = test_dataset.map(tokenize, batched=True)
 
-train_dataset = train_dataset.rename_column("label_id", "labels")
-test_dataset = test_dataset.rename_column("label_id", "labels")
+    train_dataset = train_dataset.map(tokenize, batched=True)
+    test_dataset = test_dataset.map(tokenize, batched=True)
 
-columns_to_keep = ["input_ids", "attention_mask", "labels"]
+    train_dataset = train_dataset.rename_column("label_id", "labels")
+    test_dataset = test_dataset.rename_column("label_id", "labels")
 
-train_dataset = train_dataset.remove_columns(
-    [col for col in train_dataset.column_names if col not in columns_to_keep]
-)
+    columns_to_keep = ["input_ids", "attention_mask", "labels"]
 
-test_dataset = test_dataset.remove_columns(
-    [col for col in test_dataset.column_names if col not in columns_to_keep]
-)
+    train_dataset = train_dataset.remove_columns(
+        [col for col in train_dataset.column_names if col not in columns_to_keep]
+    )
+
+    test_dataset = test_dataset.remove_columns(
+        [col for col in test_dataset.column_names if col not in columns_to_keep]
+    )
 
     train_dataset.set_format("torch")
     test_dataset.set_format("torch")
 
-        model = AutoModelForSequenceClassification.from_pretrained(
-            args.model_name,
-            num_labels=num_labels,
-            id2label=id_to_label,
-            label2id=label_to_id
-        )
+    model = AutoModelForSequenceClassification.from_pretrained(
+        args.model_name,
+        num_labels=num_labels,
+        id2label=id_to_label,
+        label2id=label_to_id
+    )
 
-training_args = TrainingArguments(
+    training_args = TrainingArguments(
         output_dir=str(RESULTS_DIR / args.output_name),
         eval_strategy="epoch",
         save_strategy="epoch",
@@ -143,10 +146,12 @@ training_args = TrainingArguments(
     predicted_labels = np.argmax(predictions.predictions, axis=1)
     true_labels = predictions.label_ids
 
+    target_names = [id_to_label[i] for i in range(num_labels)]
+
     report = classification_report(
         true_labels,
         predicted_labels,
-        target_names=[id_to_label[i] for i in range(num_labels)],
+        target_names=target_names,
         zero_division=0
     )
 
