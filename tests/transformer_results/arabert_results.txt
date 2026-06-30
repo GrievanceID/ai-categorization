@@ -1,0 +1,25 @@
+Model: aubmindlab/bert-base-arabertv02
+Accuracy: 0.05
+Macro F1: 0.023809523809523808
+
+                         precision    recall  f1-score   support
+
+administration_generale       0.00      0.00      0.00         1
+        eau_electricite       0.00      0.00      0.00         1
+              education       0.00      0.00      0.00         0
+                 emploi       0.00      0.00      0.00         1
+          environnement       0.33      0.33      0.33         3
+             etat_civil       0.00      0.00      0.00         1
+       fiscal_financier       0.00      0.00      0.00         1
+       foncier_cadastre       0.00      0.00      0.00         2
+                justice       0.00      0.00      0.00         1
+     logement_urbanisme       0.00      0.00      0.00         1
+        police_securite       0.00      0.00      0.00         1
+                  sante       0.00      0.00      0.00         3
+    services_municipaux       0.00      0.00      0.00         3
+     telecoms_numerique       0.00      0.00      0.00         1
+              transport       0.00      0.00      0.00         0
+
+               accuracy                           0.05        20
+              macro avg       0.02      0.02      0.02        20
+           weighted avg       0.05      0.05      0.05        20
