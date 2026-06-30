@@ -151,6 +151,7 @@ def main():
     report = classification_report(
         true_labels,
         predicted_labels,
+        labels=list(range(num_labels)),
         target_names=target_names,
         zero_division=0
     )
