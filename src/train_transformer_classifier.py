@@ -90,12 +90,24 @@ def main():
             truncation=True,
             max_length=128
         )
+train_dataset = train_dataset.map(tokenize, batched=True)
+test_dataset = test_dataset.map(tokenize, batched=True)
 
-    train_dataset = train_dataset.map(tokenize, batched=True)
-    test_dataset = test_dataset.map(tokenize, batched=True)
+train_dataset = train_dataset.rename_column("label_id", "labels")
+test_dataset = test_dataset.rename_column("label_id", "labels")
 
-    train_dataset = train_dataset.rename_column("label_id", "labels")
-    test_dataset = test_dataset.rename_column("label_id", "labels")
+columns_to_keep = ["input_ids", "attention_mask", "labels"]
+
+train_dataset = train_dataset.remove_columns(
+    [col for col in train_dataset.column_names if col not in columns_to_keep]
+)
+
+test_dataset = test_dataset.remove_columns(
+    [col for col in test_dataset.column_names if col not in columns_to_keep]
+)
+
+train_dataset.set_format("torch")
+test_dataset.set_format("torch")
 
     model = AutoModelForSequenceClassification.from_pretrained(
         args.model_name,
