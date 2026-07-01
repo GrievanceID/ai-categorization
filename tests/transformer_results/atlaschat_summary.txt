@@ -1,0 +1,7 @@
+AtlasChat Evaluation
+Model: hf.co/QuantFactory/Atlas-Chat-2B-GGUF:Q4_K_M
+Total tested: 5
+Correct: 2
+Accuracy: 40.00%
+Failed JSON parse: 3
+Results file: /Users/amiranegra/ai-categorization/tests/transformer_results/atlaschat_results.jsonl

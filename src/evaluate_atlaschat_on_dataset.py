@@ -99,13 +99,23 @@ def extract_json(text):
     start = text.find("{")
     end = text.rfind("}")
 
-    if start == -1 or end == -1:
-        return None
+    if start != -1 and end != -1:
+        try:
+            return json.loads(text[start:end + 1])
+        except json.JSONDecodeError:
+            pass
 
-    try:
-        return json.loads(text[start:end + 1])
-    except json.JSONDecodeError:
-        return None
+    # Fallback: if AtlasChat did not return valid JSON,
+    # search for any allowed category name inside the raw output.
+    for category in ALLOWED_CATEGORIES:
+        if category in text:
+            return {
+                "predicted_category": category,
+                "confidence": 0.0,
+                "reasoning_short": "Recovered from non-JSON output"
+            }
+
+    return None
 
 
 def evaluate(model_name, limit=None):
