@@ -67,7 +67,6 @@ Allowed categories:
 Complaint:
 {text}
 
-Return ONLY valid JSON in this format:
 Return ONLY valid JSON.
 Do not write any explanation before or after the JSON.
 Do not use markdown.
@@ -79,6 +78,7 @@ Use exactly this format:
   "confidence": 0.0,
   "reasoning_short": "short reason"
 }}
+"""
 
 
 def run_ollama(model_name, prompt):
@@ -164,7 +164,7 @@ def evaluate(model_name, limit=None):
     accuracy = correct / total if total else 0
 
     summary = (
-        f"AtlasChat Evaluation\n"
+        "AtlasChat Evaluation\n"
         f"Model: {model_name}\n"
         f"Total tested: {total}\n"
         f"Correct: {correct}\n"
