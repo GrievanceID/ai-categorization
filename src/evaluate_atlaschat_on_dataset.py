@@ -68,12 +68,17 @@ Complaint:
 {text}
 
 Return ONLY valid JSON in this format:
+Return ONLY valid JSON.
+Do not write any explanation before or after the JSON.
+Do not use markdown.
+Do not use Arabic field names.
+Use exactly this format:
+
 {{
-  "predicted_category": "",
+  "predicted_category": "one_category_id_from_allowed_list",
   "confidence": 0.0,
-  "reasoning_short": ""
+  "reasoning_short": "short reason"
 }}
-"""
 
 
 def run_ollama(model_name, prompt):
